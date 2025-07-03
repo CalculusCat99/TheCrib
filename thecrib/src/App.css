@@ -1,0 +1,43 @@
+.titleclass{
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: center;
+  gap: 12px;
+  width: 100px; /* enough space for one word */
+  height: 32px; /* aligns well with Typography default size */
+  perspective: 1000px;
+}
+
+.input1, .input2, .input3 .input4{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  
+  /* opacity: 0; */
+}
+
+.font-devanagari {
+  font-family: 'Tiro Devanagari Hindi', serif;
+}
+.font-yatra{
+  font-family: 'Yatra One', cursive;
+}
+.font-telugu{
+  font-family: 'Timmana', sans-serif;
+}
+
+.font-fran{
+  font-family: 'Francois One', sans-serif;
+}
+.font-barlow{
+  font-family:'Barlow', sans-serif;
+}

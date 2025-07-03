@@ -1,0 +1,110 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100%;
+  /* overflow-x: hidden; */
+  background-color: #F9F2EA;
+  /* overflow: auto; */
+  -ms-overflow-style: none; /* Edge */
+  scrollbar-width: none;    /* Firefox */
+}
+body::-webkit-scrollbar {
+  display: none;            /* Chrome, Safari */
+}
+
+.div1{
+  height: 100vh;
+  background-color: pink;
+}
+.section{
+  position: relative;
+  height: 1000px;
+  width: 100vw;
+  overflow: hidden;
+}
+.square{
+  height: 1000px;
+  width: 100vw;
+  background-color: red;
+  position: relative;
+  z-index: -1;
+}
+.square2{
+  height: 1000px;
+  width: 100vw;
+  background-color: blue;
+  position: absolute;
+
+  z-index: 2;
+}
+.TopDiv{
+  display: flex;
+  position: relative;
+}
+.square1{
+  /* height: 300px; */
+  width: 100vw;
+  background-color: aqua;
+}
+
+.sq2{
+  height: 150px;
+  width: 100vw;
+  background-color: #F9F2EA;
+}
+.sq3{
+  height:300px;
+  width: 100vw;
+  background-color: brown;
+}
+
+
+.top{
+  position: relative;
+  height: 500px;
+  width: 100vw;
+  /* background-color: antiquewhite; */
+  /* background-image: url('./src/assets/boulderRender.png'); */
+}
+.c1, .c2, .c3, .c4 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 500px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  z-index: 1; /* will stack above each other unless you adjust manually */
+}
+
+.c1 img, .c2 img, .c3 img, .c4 img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  image-rendering: auto;
+}
+
+/* Text on top of c1 image */
+.centered-text {
+  position: absolute;
+  top: 80%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+  font-family: 'Yatra One', serif;
+  font-size: 50px;
+  color: white;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+  pointer-events: none;
+}
+
+@font-face {
+  font-family: 'Aachen Bold';
+  src: url('./assets/Aachen-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+}
