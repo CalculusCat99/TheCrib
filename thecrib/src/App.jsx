@@ -115,17 +115,6 @@ function App() {
                 sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
               >Senor Spice</Typography>
             </Button>
-            <Button onClick={()=>{var sample_data = fetchMediaAssets();
-            console.log("this is the data post meow:",sample_data)}}> 
-              <Typography
-                sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
-              >Firebase test</Typography>
-            </Button>
-            <Button onClick={()=>{setMediaAssets()}}> 
-              <Typography
-                sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
-              >Firebase set test</Typography>
-            </Button>
             <Button onClick={() => navigate('/comingsoon')}> 
               <Typography
                 sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
