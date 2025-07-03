@@ -104,7 +104,7 @@ body::-webkit-scrollbar {
 
 @font-face {
   font-family: 'Aachen Bold';
-  src: url('./assets/Aachen-Bold.ttf') format('truetype');
+  src: url('./public/assets/Aachen-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
