@@ -125,7 +125,7 @@ function App() {
             >
               <Typography
                 sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
-              >Book new</Typography>
+              >Book</Typography>
             </Button>
             <Button onClick={() => navigate('/comingsoon')}>
               <Typography
