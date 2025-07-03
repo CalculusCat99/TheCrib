@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
 import './App.css'
 import { LandingPage } from './landingpage'
 import { AppBar, Box, Button, Toolbar, Typography } from '@mui/material'
