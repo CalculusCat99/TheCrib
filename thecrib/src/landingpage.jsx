@@ -36,7 +36,7 @@ export function LandingPage() {
         }}></Box>
             <Box className='top'>
                 <Box className='c1'>
-                    <img src='./public/assets/bolderpana.jpg'></img>
+                    <img src='/assets/bolderpana.jpg'></img>
                     <Box className='centered-text' sx={{color:'text.primary',}}> BOULDER.</Box>
                 </Box>
 
