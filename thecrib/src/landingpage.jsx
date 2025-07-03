@@ -42,13 +42,13 @@ export function LandingPage() {
 
                 <Box className='c2' sx={{backgroundColor:'background.default'}}>
                    
-                    <img src='./public/assets/pickleball.jpg'></img>
+                    <img src='/assets/pickleball.jpg'></img>
                     <Box className='centered-text' sx={{color:'text.primary',}}> PLAY</Box>
                 </Box>
 
                 <Box className='c3' sx={{backgroundColor:'background.default'}}>
                 <ReactPlayer
-                        url={`./public/assets/202004-916894674.mp4`}
+                        url={`/assets/202004-916894674.mp4`}
                         controls={false}
                         autoPlay={true}
                         loop={true}
