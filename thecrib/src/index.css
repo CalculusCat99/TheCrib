@@ -101,10 +101,10 @@ body::-webkit-scrollbar {
   z-index: 2;
   pointer-events: none;
 }
-
+/* 
 @font-face {
   font-family: 'Aachen Bold';
   src: url('./public/assets/Aachen-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
-}
+} */
