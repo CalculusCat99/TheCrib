@@ -36,19 +36,19 @@ export function LandingPage() {
         }}></Box>
             <Box className='top'>
                 <Box className='c1'>
-                    <img src='./src/assets/bolderpana.jpg'></img>
+                    <img src='./public/assets/bolderpana.jpg'></img>
                     <Box className='centered-text' sx={{color:'text.primary',}}> BOULDER.</Box>
                 </Box>
 
                 <Box className='c2' sx={{backgroundColor:'background.default'}}>
                    
-                    <img src='./src/assets/pickleball.jpg'></img>
+                    <img src='./public/assets/pickleball.jpg'></img>
                     <Box className='centered-text' sx={{color:'text.primary',}}> PLAY</Box>
                 </Box>
 
                 <Box className='c3' sx={{backgroundColor:'background.default'}}>
                 <ReactPlayer
-                        url={`./src/assets/202004-916894674.mp4`}
+                        url={`./public/assets/202004-916894674.mp4`}
                         controls={false}
                         autoPlay={true}
                         loop={true}
