@@ -54,6 +54,7 @@ function App() {
 
   const handleClose = () => {
     setOpen(false);
+    navigate('/')
   };
   const navigate = useNavigate();
   useEffect(() => {
