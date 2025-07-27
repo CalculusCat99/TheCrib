@@ -15,7 +15,21 @@ import { ComingSoon } from './comingsoon'
 import { MainPage } from './MainPage'
 import { FooterSection } from './footer'
 import { Bookings } from './bookings'
-import { setMediaAssets,fetchMediaAssets } from './firebasedatafetch'
+import { setMediaAssets, fetchMediaAssets } from './firebasedatafetch'
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
+import { InlineWidget } from "react-calendly";
+import MenuIcon from '@mui/icons-material/Menu';
+import IconButton from '@mui/material/IconButton';
+import Drawer from '@mui/material/Drawer';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+
 
 
 
@@ -23,6 +37,24 @@ function App() {
   const [hideAppBar, setHideAppBar] = useState(false);
   const [istheme, setTheme] = useState(true);
   const { toggleTheme, mode } = useCustomTheme();
+  const [Open, setOpen] = useState(false);
+  const theme = useTheme();
+  const fullscreen = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const [drawerOpen, setDrawerOpen] = useState(false);
+
+  const toggleDrawer = (open) => () => {
+    setDrawerOpen(open);
+  };
+
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);
+  };
   const navigate = useNavigate();
   useEffect(() => {
     const handleScroll = () => {
@@ -109,23 +141,124 @@ function App() {
               Climb | Eat | Paddle | Repeat
             </Typography>
           </Box>
-          <Box sx={{ display: 'flex' }}>
+          {isMobile ? (
+            <>
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                onClick={toggleDrawer(true)}
+              >
+                <MenuIcon />
+              </IconButton>
+              <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
+                <Box sx={{ width: 250 }} role="presentation" onClick={toggleDrawer(false)}>
+                  <List>
+                    <ListItem button onClick={() => navigate('/comingsoon')}>
+                      <Typography
+                        sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+                      >Senor Spice</Typography>
+                    </ListItem>
+                    <ListItem button onClick={handleClickOpen}>
+                      <Typography
+                        sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+                      >Book</Typography>
+                    </ListItem>
+                    <ListItem button onClick={() => navigate('/comingsoon')}>
+                      <Typography
+                        sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+                      >The Crib Club</Typography>
+                    </ListItem>
+                    <ListItem button onClick={() => navigate('/comingsoon')}>
+                      <Typography
+                        sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+                      >Merchandise</Typography>
+                    </ListItem>
+                    <ListItem button>
+                      <Typography
+                        sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+                      >Join the club</Typography>
+                    </ListItem>
+                    <ListItem button onClick={toggleTheme}>
+                      <Typography
+                        sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+                      >Theme</Typography>
+                    </ListItem>
+
+                  </List>
+                </Box>
+              </Drawer>
+            </>
+          ) : (
+            <>
+              <Box sx={{ display: 'flex' }}>
+                <Button onClick={() => navigate('/comingsoon')}>
+                  <Typography
+                    sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+                  >Senor Spice</Typography>
+                </Button>
+                <Button
+
+                  onClick={handleClickOpen}
+                >
+                  <Typography
+                    sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+                  >Book</Typography>
+                </Button>
+
+                <Button
+                  onClick={() => navigate('/comingsoon')}
+                >
+                  <Typography
+                    sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+                  >The Crib Club</Typography>
+                </Button>
+                <Button onClick={() => navigate('/comingsoon')}>
+                  <Typography
+                    sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+                  >Merchandise</Typography>
+                </Button>
+
+              </Box>
+              <Box sx={{ display: 'flex' }}>
+                <Button>
+                  <Typography
+                    sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+                  >Join the club</Typography>
+                </Button>
+                <Button
+                  onClick={toggleTheme}
+                >
+                  <Typography
+                    sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+                  >Theme</Typography>
+                </Button>
+
+
+              </Box></>
+          )}
+
+          {/* <Box sx={{ display: 'flex' }}>
             <Button onClick={() => navigate('/comingsoon')}>
               <Typography
                 sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
               >Senor Spice</Typography>
             </Button>
-            <Button onClick={() => navigate('/comingsoon')}> 
-              <Typography
-                sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
-              >The Crib Club</Typography>
-            </Button>
             <Button
-              onClick={() => navigate('/bookings')}
+
+              onClick={handleClickOpen}
             >
               <Typography
                 sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
               >Book</Typography>
+            </Button>
+
+            <Button
+              onClick={() => navigate('/comingsoon')}
+            >
+              <Typography
+                sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
+              >The Crib Club</Typography>
             </Button>
             <Button onClick={() => navigate('/comingsoon')}>
               <Typography
@@ -150,7 +283,7 @@ function App() {
             </Button>
 
 
-          </Box>
+          </Box> */}
 
         </Toolbar>
       </AppBar>
@@ -165,9 +298,28 @@ function App() {
       <FooterSection></FooterSection>
       {/* <LandingPage></LandingPage> */}
       {/* <Box sx={{ height: "500px", backgroundColor: 'transparent' }}></Box> */}
-
+      <Dialog
+        fullScreen={fullscreen}
+        open={Open}
+        onClose={handleClose}
+        fullWidth
+        maxWidth="md"
+      >
+        <DialogTitle>
+          <Typography
+            sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}>
+            Book any Slot you Want! We wont Slot Shame you! </Typography>
+        </DialogTitle>
+        <DialogContent sx={{ overflow: 'hidden' }}>
+          <InlineWidget
+            url="https://calendly.com/thecrib-nagpur"
+            styles={{ height: '600px', width: '100%' }}
+          />
+        </DialogContent>
+      </Dialog>
 
     </Box>
+
   )
 }
 
