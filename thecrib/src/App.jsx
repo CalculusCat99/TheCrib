@@ -238,53 +238,6 @@ function App() {
               </Box></>
           )}
 
-          {/* <Box sx={{ display: 'flex' }}>
-            <Button onClick={() => navigate('/comingsoon')}>
-              <Typography
-                sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
-              >Senor Spice</Typography>
-            </Button>
-            <Button
-
-              onClick={handleClickOpen}
-            >
-              <Typography
-                sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
-              >Book</Typography>
-            </Button>
-
-            <Button
-              onClick={() => navigate('/comingsoon')}
-            >
-              <Typography
-                sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
-              >The Crib Club</Typography>
-            </Button>
-            <Button onClick={() => navigate('/comingsoon')}>
-              <Typography
-                sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
-              >Merchandise</Typography>
-            </Button>
-
-
-          </Box>
-          <Box sx={{ display: 'flex' }}>
-            <Button>
-              <Typography
-                sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
-              >Join the club</Typography>
-            </Button>
-            <Button
-              onClick={toggleTheme}
-            >
-              <Typography
-                sx={{ color: 'text.primary', lineHeight: '32px', fontFamily: "'Francois One', sans-serif", fontSize: 15 }}
-              >Theme</Typography>
-            </Button>
-
-
-          </Box> */}
-
         </Toolbar>
       </AppBar>
       {/* <GridImg></GridImg> */}

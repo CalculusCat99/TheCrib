@@ -3,36 +3,35 @@ import ReactPlayer from 'react-player';
 import './grid.css';
 import { Box } from "@mui/material";
 import { fetchMediaAssets } from "./firebasedatafetch";
+import useMediaQuery from '@mui/material/useMediaQuery';
+import { useTheme } from '@mui/material/styles';
 
 export function GridMob() {
   const [items, setItems] = useState([]);
-
+  
   useEffect(() => {
     const generateItems = async () => {
       const videos = await fetchMediaAssets();
-      const rows = [
-        { id: 1, count: 6 },
-        { id: 2, count: 5 },
-        { id: 3, count: 6 },
-        { id: 4, count: 5 }
-      ];
-      const newItems = rows.flatMap((row) =>
-        Array.from({ length: row.count }, (_, index) => {
-          const itemId = `${row.id}-${index}`;
-          const video = videos.find((v) => v.id === itemId);
-          return {
-            id: itemId,
-            rowId: row.id,
-            video: video,
-          };
-        })
-      );
+  
+      // Shuffle videos randomly
+      const shuffled = videos.sort(() => 0.5 - Math.random());
+  
+      // Take first 6
+      const selected = shuffled.slice(0, 6);
+  
+      // Assign each item a unique id and rowId (not used for layout but preserved)
+      const newItems = selected.map((video, index) => ({
+        id: `video-${index}`,
+        rowId: Math.floor(index / 3) + 1, // optional grouping logic
+        video,
+      }));
+  
       setItems(newItems);
     };
-
+  
     generateItems();
   }, []);
-
+  
   return (
     <Box
       sx={{
